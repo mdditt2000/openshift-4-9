@@ -2,8 +2,8 @@
   kind: Route
   metadata:
     labels:
-      name: f5-demo-route-basic
-    name: f5-demo-route-basic
+      name: f5-demo-route-two
+    name: f5-demo-route-two
     namespace: default
     annotations:
       # annotations
