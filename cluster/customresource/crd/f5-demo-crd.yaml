@@ -21,4 +21,4 @@ spec:
       type: http
     path: /tea
     service: tea-svc
-    servicePort: 8080
+    servicePort: 80
