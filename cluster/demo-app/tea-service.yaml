@@ -3,11 +3,13 @@ kind: Service
 metadata:
   name: tea-svc
   labels:
+    app: tea-svc
 spec:
   ports:
-  - port: 8080
-    targetPort: 8080
+  - name: tea-svc
+    port: 8080
     protocol: TCP
-    name: http
+    targetPort: 8080
+  type: ClusterIP
   selector:
-    app: tea
+    app: tea-svc
