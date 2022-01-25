@@ -1,0 +1,24 @@
+apiVersion: "cis.f5.com/v1"
+kind: VirtualServer
+metadata:
+  name: vs-coffee
+  namespace: nginx-ingress
+  labels:
+    f5cr: "true"
+spec:
+  host: mycrd.example.com
+  virtualServerAddress: "10.192.75.120"
+  virtualServerHTTPSPort: 443
+  tlsProfileName: edge-tls
+  httpTraffic: redirect
+  snat: auto
+  pools:
+  - monitor:
+      interval: 20
+      recv: ""
+      send: "GET /coffee HTTP/1.1\r\nHost: mycrd.example.com\r\n"
+      timeout: 10
+      type: http
+    path: /one
+    service: f5-demo-crd
+    servicePort: 8080
