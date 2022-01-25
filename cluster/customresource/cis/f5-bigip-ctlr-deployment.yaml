@@ -41,7 +41,7 @@ spec:
             # https://clouddocs.f5.com/containers/latest/
               "--bigip-username=$(BIGIP_USERNAME)",
               "--bigip-password=$(BIGIP_PASSWORD)",
-              "--bigip-url=192.168.200.60",
+              "--bigip-url=10.192.125.60",
               "--bigip-partition=OpenShift",
               "--namespace=default",
               "--pool-member-type=cluster",
