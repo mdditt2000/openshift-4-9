@@ -24,4 +24,4 @@
       targetPort: 80
     to:
       kind: Service
-      name: f5-demo
+      name: f5-demo-two
