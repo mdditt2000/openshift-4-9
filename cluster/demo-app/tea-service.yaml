@@ -7,9 +7,9 @@ metadata:
 spec:
   ports:
   - name: tea-svc
-    port: 8080
+    port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   type: ClusterIP
   selector:
     app: tea-svc
