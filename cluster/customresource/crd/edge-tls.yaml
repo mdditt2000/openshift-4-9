@@ -11,4 +11,4 @@ spec:
     clientSSL: /Common/clientssl
     reference: bigip
   hosts:
-  - mycrd.example.com
+  - cafe.example.com
