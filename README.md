@@ -1,2 +1,1 @@
-# openshift-4-9
-Example repo for testing BIGIP using Container Ingress Services on OpenShift 4.9
+# OpenShift 4.9 and F5 Container Ingress Services (CIS) User-Guide for BIG-IP Cluster
