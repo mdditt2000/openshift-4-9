@@ -1,7 +1,7 @@
 apiVersion: "cis.f5.com/v1"
 kind: VirtualServer
 metadata:
-  name: cafe-crd
+  name: cafe-tea
   namespace: default
   labels:
     f5cr: "true"
@@ -11,14 +11,15 @@ spec:
   virtualServerHTTPSPort: 443
   tlsProfileName: edge-tls
   httpTraffic: redirect
+  hostGroup: "cafe"
   snat: auto
   pools:
   - monitor:
       interval: 20
       recv: ""
-      send: /
+      send: "GET /tea HTTP/1.1\r\nHost: cafe.example.com\r\n"
       timeout: 10
       type: http
-    path: /
+    path: /tea
     service: tea-svc
-    servicePort: 80
+    servicePort: 8080
