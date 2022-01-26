@@ -1,0 +1,27 @@
+  apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    labels:
+      name: mocha-route
+    name: mocha-tea
+    namespace: default
+    annotations:
+      # annotations
+      # health monitoring
+      virtual-server.f5.com/health: |
+        [
+          {
+            "path": "cafe.example.com/",
+            "send": "HTTP GET /mocha",
+            "interval": 5,
+            "timeout": 10
+          }
+        ]
+  spec:
+    host: cafe.example.com
+    path: "/mocha"
+    port:
+      targetPort: 8080
+    to:
+      kind: Service
+      name: mocha-svc

@@ -2,8 +2,8 @@
   kind: Route
   metadata:
     labels:
-      name: f5-demo-route
-    name: f5-demo-route
+      name: coffee-route
+    name: coffee-tea
     namespace: default
     annotations:
       # annotations
@@ -11,17 +11,17 @@
       virtual-server.f5.com/health: |
         [
           {
-            "path": "myroute.f5demo.com/",
-            "send": "HTTP GET /",
+            "path": "cafe.example.com/",
+            "send": "HTTP GET /coffee",
             "interval": 5,
             "timeout": 10
           }
         ]
   spec:
-    host: myroute.f5demo.com
-    path: "/"
+    host: cafe.example.com
+    path: "/coffee"
     port:
-      targetPort: 80
+      targetPort: 8080
     to:
       kind: Service
-      name: f5-demo-route
+      name: coffee-svc
