@@ -45,9 +45,9 @@ args: [
 Deploy CIS in OpenShift
 
 ```
-kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<secret>
-kubectl create -f bigip-ctlr-clusterrole.yaml
-kubectl create -f f5-bigip-ctlr-deployment.yaml
+oc create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<secret>
+oc create -f bigip-ctlr-clusterrole.yaml
+oc create -f f5-bigip-ctlr-deployment.yaml
 ```
 
 CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cis)
@@ -64,8 +64,17 @@ User-case for the OpenShift Routes:
 - Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
 - Backend listening on PORT 8080
 
+Create OpenShift Routes
 
+```
+oc create -f route-tea.yaml
+oc create -f route-coffee.yaml
+oc create -f route-mocha.yaml
+```
 
+Validate OpenShift Routes using the OpenShift Dashboard
+
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_15-27-43.png)
 
 ## Using Custom Resource Definitions
 
@@ -101,9 +110,9 @@ args: [
 Deploy CIS in OpenShift
 
 ```
-kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<secret>
-kubectl create -f bigip-ctlr-clusterrole.yaml
-kubectl create -f f5-bigip-ctlr-deployment.yaml
+oc create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<secret>
+oc create -f bigip-ctlr-clusterrole.yaml
+oc create -f f5-bigip-ctlr-deployment.yaml
 ```
 
 CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/customresource/cis)
