@@ -54,7 +54,7 @@ CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/ro
 
 **Note** Do not forget the CNI [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cni)
 
-### Step 2: Creating OpenShift Route
+### Step 2: Creating OpenShift Routes
 
 User-case for the OpenShift Routes:
 

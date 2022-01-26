@@ -8,6 +8,7 @@
     annotations:
       # annotations
       # health monitoring
+      virtual-server.f5.com/clientssl: /Common/clientssl
       virtual-server.f5.com/health: |
         [
           {
@@ -22,6 +23,9 @@
     path: "/coffee"
     port:
       targetPort: 8080
+    tls:
+      insecureEdgeTerminationPolicy: Redirect
+      termination: edge
     to:
       kind: Service
       name: coffee-svc
