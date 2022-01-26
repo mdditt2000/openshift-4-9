@@ -4,7 +4,7 @@ This document compares the differences between OpenShift Routes and Custom Resou
 
 In this example we are using a cafe application with three endpoints; **tea,coffee and mocha** as shown in the diagram below
 
-![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_13-58-40.png)
+![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_14-39-29.png)
 
 Demo on YouTube [video]()
 
