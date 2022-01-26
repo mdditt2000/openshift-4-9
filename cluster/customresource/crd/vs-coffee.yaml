@@ -10,6 +10,7 @@ spec:
   virtualServerAddress: "10.192.125.65"
   virtualServerHTTPSPort: 443
   tlsProfileName: edge-tls
+  policyName: cafe-policy
   httpTraffic: redirect
   hostGroup: "cafe"
   snat: auto
