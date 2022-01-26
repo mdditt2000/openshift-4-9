@@ -34,13 +34,11 @@ args: [
   "--namespace=default",
   "--pool-member-type=cluster",
   "--openshift-sdn-name=/Common/openshift_vxlan",
-  "--log-level=DEBUG",
   "--insecure=true",
   "--manage-routes=true",
   "--route-vserver-addr=10.192.125.65",
   "--as3-validation=true",
   "--log-as3-response=true",
-  "--disable-teems=true",
 ]
 ```
 
@@ -58,7 +56,16 @@ CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/ro
 
 ### Step 2: Creating OpenShift Route
 
-Coming
+User-case for the OpenShift Routes:
+
+- Edge Termination
+- Redirect HTTP to HTTPS
+- Health monitor of the backend NGINX application using HOST **cafe.example.com** and **PATH /coffee, /tea and /mocha**
+- Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
+- Backend listening on PORT 8080
+
+
+
 
 ## Using Custom Resource Definitions
 
@@ -84,12 +91,10 @@ args: [
   "--namespace=default",
   "--pool-member-type=cluster",
   "--openshift-sdn-name=/Common/openshift_vxlan",
-  "--log-level=DEBUG",
   "--insecure=true",
   "--custom-resource-mode=true",
   "--as3-validation=true",
   "--log-as3-response=true",
-  "--disable-teems=true",
 ]
 ```
 
@@ -107,4 +112,11 @@ CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/cu
 
 ### Step 2: Creating Custom Resource Definitions
 
+Similar User-case for the CRDs:
+
+- Edge Termination
+- Redirect HTTP to HTTPS
+- Health monitor of the backend NGINX application using HOST **cafe.example.com** and **PATH /coffee, /tea and /mocha**
+- Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
+- Backend listening on PORT 8080
 
