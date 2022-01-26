@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: tea
-        image: pleshakov/nginx-hello:0.1
+        image: f5devcentral/f5-demo-httpd
         ports:
-        - containerPort: 8080
+        - containerPort: 80
