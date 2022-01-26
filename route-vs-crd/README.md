@@ -56,7 +56,55 @@ CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/ro
 
 **Note** Do not forget the CNI [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cni)
 
-## Using OpenShift Route
+### Step 2: Creating OpenShift Route
 
+Coming
+
+## Using Custom Resource Definitions
+
+### Step 1: Deploy CIS
+
+The biggest benefit for using CRDs is their no limitations on how many Public IPs **Virtual Server** create on BIG-IP. However to maintain similarity with Routes we using HOST Header Load balancing to determine the backend application. In this example the backend is **/tea,/coffee and /mocha** with the same Public IP address 10.192.125.65
+
+Add the following parameters to THE CIS deployment
+
+* --custom-resource-mode=true - Configure CIS to watch for CRDs
+* --bigip-partition=OpenShift - CIS uses BIG-IP tenant OpenShift to manage CRDs
+* --openshift-sdn-name=/Common/openshift_vxlan - CNI policy on BIG-IP to connect to the PODs in OpenShift
+
+```
+args: [
+  # See the k8s-bigip-ctlr documentation for information about
+  # all config options
+  # https://clouddocs.f5.com/containers/latest/
+  "--bigip-username=$(BIGIP_USERNAME)",
+  "--bigip-password=$(BIGIP_PASSWORD)",
+  "--bigip-url=10.192.125.60",
+  "--bigip-partition=OpenShift",
+  "--namespace=default",
+  "--pool-member-type=cluster",
+  "--openshift-sdn-name=/Common/openshift_vxlan",
+  "--log-level=DEBUG",
+  "--insecure=true",
+  "--custom-resource-mode=true",
+  "--as3-validation=true",
+  "--log-as3-response=true",
+  "--disable-teems=true",
+]
+```
+
+Deploy CIS in OpenShift
+
+```
+kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<secret>
+kubectl create -f bigip-ctlr-clusterrole.yaml
+kubectl create -f f5-bigip-ctlr-deployment.yaml
+```
+
+CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/customresource/cis)
+
+**Note** Do not forget the CNI [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cni)
+
+### Step 2: Creating Custom Resource Definitions
 
 
