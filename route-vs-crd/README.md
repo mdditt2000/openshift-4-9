@@ -21,6 +21,7 @@ Add the following parameters to THE CIS deployment
 * --manage-routes=true - Configure CIS to watch for Routes
 * --bigip-partition=OpenShift - CIS uses BIG-IP tenant OpenShift to manage Routes
 * --openshift-sdn-name=/Common/openshift_vxlan - CNI policy on BIG-IP to connect to the PODs in OpenShift
+* --override-as3-declaration=default/cafe-override - AS3 Override allows you to add Objects not exposed by an annotations such as custom policies, iRules, profiles etc
 
 ```
 args: [
@@ -37,6 +38,7 @@ args: [
   "--insecure=true",
   "--manage-routes=true",
   "--route-vserver-addr=10.192.125.65",
+  "--override-as3-declaration=default/cafe-override",
   "--as3-validation=true",
   "--log-as3-response=true",
 ]
@@ -61,8 +63,14 @@ User-case for the OpenShift Routes:
 - Edge Termination
 - Redirect HTTP to HTTPS
 - Health monitor of the backend NGINX application using HOST **cafe.example.com** and **PATH /coffee, /tea and /mocha**
-- Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
+- Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field - **Use AS3 override**
 - Backend listening on PORT 8080
+
+**Note** No annotations for custom HTTP Policy under the Virtual Server. You need to use AS3 override configmap to add custom policies etc
+
+Diagram blow displays the example of **route-tea** with the **AS3 override** for the following use-case
+
+![route-as3-override](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_14-39-29.png)
 
 Create OpenShift Routes
 
