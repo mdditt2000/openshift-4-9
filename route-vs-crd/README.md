@@ -70,7 +70,7 @@ User-case for the OpenShift Routes:
 
 Diagram blow displays the example of **route-tea** with the **AS3 override** for the following use-case
 
-![route-as3-override](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_14-39-29.png)
+![route-as3-override](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-23-54.png)
 
 Create OpenShift Routes
 
