@@ -203,7 +203,7 @@ Validate OpenShift Routes using the BIG-IP
 
 Validate OpenShift Routes pool-members using the BIG-IP
 
-![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-38-40.png)
+![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-51-23.png)
 
 Validate OpenShift Routes by connecting to the Public IP
 
