@@ -80,10 +80,11 @@ oc create -f route-tea.yaml
 oc create -f route-coffee.yaml
 oc create -f route-mocha.yaml
 ```
+Routes [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/ocp-route)
 
 Validate OpenShift Routes using the OpenShift Dashboard
 
-![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_15-27-43.png)
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-39-54.png)
 
 Validate OpenShift Routes using the BIG-IP
 
@@ -177,3 +178,25 @@ oc create -f vs-mocha.yaml
 ```
 
 CRD [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/customresource/crd)
+
+Validate OpenShift Routes using from OpenShift
+
+**Note** Sadly OpenShift does not have the same Dashboard for CRDs. Therefore you need to use the OpenShift CLI
+
+```
+
+```
+
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_15-27-43.png)
+
+Validate OpenShift Routes using the BIG-IP
+
+![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-36-07.png)
+
+Validate OpenShift Routes pool-members using the BIG-IP
+
+![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-38-40.png)
+
+Validate OpenShift Routes by connecting to the Public IP
+
+![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-44-57.png)
