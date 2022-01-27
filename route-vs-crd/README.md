@@ -201,10 +201,10 @@ Validate OpenShift Routes using the BIG-IP
 
 ![big-ip CRD](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-47-04.png)
 
-Validate OpenShift Routes pool-members using the BIG-IP
+Validate OpenShift CRD pool-members using the BIG-IP
 
 ![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-51-23.png)
 
-Validate OpenShift Routes by connecting to the Public IP
+Validate OpenShift CRD by connecting to the Public IP
 
 ![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-44-57.png)
