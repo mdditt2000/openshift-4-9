@@ -1,0 +1,13 @@
+{
+    "declaration": {
+        "OpenShift": {
+            "Shared": {
+                "https_ose_vserver": {
+                    "profileHTTP": {
+                        "bigip": "//Common/Custom_HTTP"
+                    }
+                }
+            }
+        }
+    }
+}

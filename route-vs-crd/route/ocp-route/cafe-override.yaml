@@ -1,0 +1,21 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cafe-override
+  namespace: f5
+data:
+  template: |
+    {
+        "declaration": {
+            "OpenShift": {
+                "Shared": {
+                    "https_ose_vserver": {
+                        "profileHTTP": {
+                            "bigip": "//Common/Custom_HTTP"
+                        }
+                    }
+                }
+            }
+        }
+    }

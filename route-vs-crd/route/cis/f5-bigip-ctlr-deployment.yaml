@@ -50,6 +50,7 @@ spec:
               "--insecure=true",
               "--manage-routes=true",
               "--route-vserver-addr=10.192.125.65",
+              "--override-as3-declaration=default/cafe-override",
               "--as3-validation=true",
               "--log-as3-response=true",
               "--disable-teems=true",
