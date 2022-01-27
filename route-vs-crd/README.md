@@ -137,7 +137,7 @@ Create OpenShift CRDs
 oc create -f CustomResourceDefinition.yaml
 ```
 
-CIS [repo](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/customresource/crd/crd-schema/customresourcedefinitions.yml)
+CRD Schema [repo](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/customresource/crd/crd-schema/customresourcedefinitions.yml)
 
 Create OpenShift CRDs
 
@@ -149,3 +149,4 @@ oc create -f vs-coffee.yaml
 oc create -f vs-mocha.yaml
 ```
 
+CRD [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/customresource/crd)
