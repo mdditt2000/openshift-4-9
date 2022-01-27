@@ -184,14 +184,22 @@ Validate OpenShift Routes using from OpenShift
 **Note** Sadly OpenShift does not have the same Dashboard for CRDs. Therefore you need to use the OpenShift CLI
 
 ```
+# oc get crd,vs,policy,tlsprofile -n default
+NAME                                   HOST               TLSPROFILENAME   HTTPTRAFFIC   IPADDRESS       IPAMLABEL   IPAMVSADDRESS   STATUS   AGE
+virtualserver.cis.f5.com/cafe-coffee   cafe.example.com   edge-tls         redirect      10.192.125.65                                        68s
+virtualserver.cis.f5.com/cafe-mocha    cafe.example.com   edge-tls         redirect      10.192.125.65                                        68s
+virtualserver.cis.f5.com/cafe-tea      cafe.example.com   edge-tls         redirect      10.192.125.65               None            Ok       68s
 
+NAME                            AGE
+policy.cis.f5.com/cafe-policy   68s
+
+NAME                             AGE
+tlsprofile.cis.f5.com/edge-tls   68s
 ```
-
-![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-26_15-27-43.png)
 
 Validate OpenShift Routes using the BIG-IP
 
-![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-36-07.png)
+![big-ip CRD](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-47-04.png)
 
 Validate OpenShift Routes pool-members using the BIG-IP
 
