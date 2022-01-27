@@ -129,3 +129,23 @@ Similar User-case for the CRDs:
 - Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
 - Backend listening on PORT 8080
 
+Create OpenShift CRDs
+
+**Note:** CIS requires the CustomResourceDefinition schema
+
+```
+oc create -f CustomResourceDefinition.yaml
+```
+
+CIS [repo](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/customresource/crd/crd-schema/customresourcedefinitions.yml)
+
+Create OpenShift CRDs
+
+```
+oc create -f edge-tls.yaml
+oc create -f cafe-policy.yaml
+oc create -f vs-tea.yaml
+oc create -f vs-coffee.yaml
+oc create -f vs-mocha.yaml
+```
+
