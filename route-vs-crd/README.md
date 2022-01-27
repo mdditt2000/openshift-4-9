@@ -150,6 +150,12 @@ Similar User-case for the CRDs:
 - Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field
 - Backend listening on PORT 8080
 
+**Note** Unlike OpenShift Routes, CIS can reference dedicated CRDs for specific tasks such as ExternalDNS, Policies, TLS Termination etc. 
+
+Diagram blow displays the example of **route-tea** with the **dge-tls** and **cafe-policy** for the following use-case. The TLS, Policy CRD are referenced in the VirtualServer CRD as shown in the diagram below
+
+![crd-policy-tls](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_13-37-29.png)
+
 Create OpenShift CRDs
 
 **Note:** CIS requires the CustomResourceDefinition schema
