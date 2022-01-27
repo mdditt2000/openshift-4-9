@@ -67,6 +67,7 @@ User-case for the OpenShift Routes:
 Create OpenShift Routes
 
 ```
+oc create -f cafe-override.yaml
 oc create -f route-tea.yaml
 oc create -f route-coffee.yaml
 oc create -f route-mocha.yaml
