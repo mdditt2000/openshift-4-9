@@ -15,7 +15,7 @@ Demo on YouTube [video]()
 Currently in CIS 2.7 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend
 application. In this example the backend is **/tea,/coffee and /mocha**
 
-Add the following parameters to THE CIS deployment
+Add the following parameters to the CIS deployment
 
 * --route-vserver-addr=10.192.125.65 - Public IP for BIG-IP for all Routes
 * --manage-routes=true - Configure CIS to watch for Routes
@@ -153,7 +153,7 @@ Similar User-case for the CRDs:
 
 **Note** Unlike OpenShift Routes, CIS can reference dedicated CRDs for specific tasks such as ExternalDNS, Policies, TLS Termination etc. 
 
-Diagram blow displays the example of **vs-tea** with the **dge-tls** and **cafe-policy** for the following use-case. The TLS, Policy CRD are referenced in the VirtualServer CRD as shown in the diagram below
+Diagram below displays the example of **vs-tea** with the **dge-tls** and **cafe-policy** for the following use-case. The TLS, Policy CRD are referenced in the VirtualServer CRD as shown in the diagram below
 
 ![crd-policy-tls](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_13-37-29.png)
 
