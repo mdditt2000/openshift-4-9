@@ -84,7 +84,7 @@ Routes [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd
 
 Validate OpenShift Routes using the OpenShift Dashboard
 
-![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_14-39-54.png)
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_16-53-47.png)
 
 Validate OpenShift Routes using the BIG-IP
 
