@@ -50,7 +50,7 @@ spec:
               "--insecure=true",
               "--manage-routes=true",
               "--route-spec-configmap=default/global-cm",
-              "--controller-mode="openshift",
+              "--controller-mode=openshift",
               "--as3-validation=true",
               "--log-as3-response=true",
           ]
