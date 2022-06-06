@@ -4,7 +4,7 @@ This document compares the differences between **OpenShift Routes** and **OpenSh
 
 In this example we are using a cafe application with three endpoints; **tea,coffee and mocha** as shown in the diagram below
 
-![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-01-26_14-39-29.png)
+![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-06_15-57-24.png)
 
 Demo on YouTube [video]()
 
