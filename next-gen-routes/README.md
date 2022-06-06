@@ -77,19 +77,19 @@ Routes [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/next-gen-rou
 
 Validate OpenShift Routes using the OpenShift Dashboard
 
-![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_16-53-47.png)
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-01-27_16-53-47.png)
 
 Validate OpenShift Routes using the BIG-IP
 
-![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-36-07.png)
+![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-06_12-39-40.png)
 
 Validate OpenShift Routes pool-members using the BIG-IP
 
-![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-38-40.png)
+![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-01-27_11-38-40.png)
 
 Validate OpenShift Routes by connecting to the Public IP
 
-![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-44-57.png)
+![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-01-27_11-44-57.png)
 
 ## Next Generation OpenShift Routes
 
