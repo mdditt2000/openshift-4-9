@@ -1,6 +1,6 @@
 # Next Generation OpenShift Routes 
 
-This document compares the differences between OpenShift Routes and OpenShift Routes using Next Generation Routes Controller. Next Generation Routes Controller extended F5 Controller Ingress Services to use multiple Virtual IP addresses. Before F5 CIS could only manage one Virtual IP address per CIS instance. 
+This document compares the differences between **OpenShift Routes** and **OpenShift Routes using Next Generation Routes Controller**. Next Generation Routes Controller **extended F5 Controller Ingress Services to use multiple Virtual IP addresses**. Before F5 CIS could only manage one Virtual IP address per CIS instance. 
 
 In this example we are using a cafe application with three endpoints; **tea,coffee and mocha** as shown in the diagram below
 
