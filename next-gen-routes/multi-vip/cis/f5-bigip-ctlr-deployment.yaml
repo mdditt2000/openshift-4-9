@@ -48,7 +48,6 @@ spec:
               "--openshift-sdn-name=/Common/openshift_vxlan",
               "--log-level=DEBUG",
               "--insecure=true",
-              "--manage-routes=true",
               "--route-spec-configmap=default/global-cm",
               "--controller-mode=openshift",
               "--as3-validation=true",
