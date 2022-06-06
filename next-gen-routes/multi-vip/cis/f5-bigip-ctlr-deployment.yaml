@@ -49,8 +49,8 @@ spec:
               "--log-level=DEBUG",
               "--insecure=true",
               "--manage-routes=true",
-              "--route-spec-configmap="default/global-cm"
-              "--controller-mode="openshift"
+              "--route-spec-configmap=default/global-cm",
+              "--controller-mode="openshift",
               "--as3-validation=true",
               "--log-as3-response=true",
           ]
