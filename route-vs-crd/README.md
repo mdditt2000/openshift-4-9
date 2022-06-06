@@ -1,4 +1,4 @@
-# OpenShift Routes verse Custom Resource Definitions
+# Next Generation OpenShift Routes 
 
 This document compares the differences between OpenShift Routes and Custom Resource Definitions. Custom Resource allows you to extend Kubernetes capabilities by adding any kind of API object useful for your application. Custom Resource Definition is what you use to define a Custom Resource. This is a powerful way to extend F5 CIS Kubernetes capabilities beyond the default installation and similar to OpenShift Routes.
 
