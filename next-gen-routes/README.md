@@ -12,8 +12,7 @@ Demo on YouTube [video]()
 
 ### Step 1: Deploy CIS
 
-Currently in CIS 2.8.1 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend
-application. In this example the backend is **/tea,/coffee and /mocha**
+Currently in CIS 2.8.1 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend application. In this example the backend is **/tea,/coffee and /mocha** using hostname **cafe.example.com**
 
 Add the following parameters to the CIS deployment
 
@@ -21,7 +20,6 @@ Add the following parameters to the CIS deployment
 * --manage-routes=true - Configure CIS to watch for Routes
 * --bigip-partition=OpenShift - CIS uses BIG-IP tenant OpenShift to manage Routes
 * --openshift-sdn-name=/Common/openshift_vxlan - CNI policy on BIG-IP to connect to the PODs in OpenShift
-* --override-as3-declaration=default/cafe-override - AS3 Override allows you to add Objects not exposed by an annotations such as custom policies, iRules, profiles etc
 
 ```
 args: [
@@ -38,7 +36,6 @@ args: [
   "--insecure=true",
   "--manage-routes=true",
   "--route-vserver-addr=10.192.125.65",
-  "--override-as3-declaration=default/cafe-override",
   "--as3-validation=true",
   "--log-as3-response=true",
 ]
@@ -94,3 +91,44 @@ Validate OpenShift Routes by connecting to the Public IP
 ## Next Generation OpenShift Routes
 
 ### Step 1: Deploy CIS
+
+Next Generation Routes Controller uses extended ConfigMap, allowing the user to create multiple Virtual IP addresses for OpenShift Routes. Support for multi-partition is also available.
+
+Creating a second Public IP **Virtual Server** for BIG-IP to handle a difference group of applications, namespace or project. Routes uses HOST Header Load balancing to determine the backend application. In this example the backend is **/tea,/coffee and /mocha** using hostname **"cafeTwo.example.com"**
+
+Add the following parameters to the CIS deployment
+
+* Routegroup specific config for each namespace is provided as part of extendedSpec through Configmap.
+* ConfigMap info is passed to CIS with argument --route-spec-configmap="namespace/configmap-name"
+* Controller mode should be set to openshift to enable multiple VIP support(--controller-mode="openshift")
+
+Using Local ConfigMap
+
+ * Local configmap is used to specify route config for namespace and allows tenant users access to fine tune the route config. It is processed by CIS only when allowOverride is set to true in global confimap for this namespace.
+* Only one local configmap is allowed per namespace. Local configmap must have only one entry in extendedRouteSpec list and that should be the current namespace only
+
+* --route-vserver-addr=10.192.125.65 - Public IP for BIG-IP for all Routes
+* --manage-routes=true - Configure CIS to watch for Routes
+* --bigip-partition=OpenShift - CIS uses BIG-IP tenant OpenShift to manage Routes
+* --openshift-sdn-name=/Common/openshift_vxlan - CNI policy on BIG-IP to connect to the PODs in OpenShift
+
+```
+args: [
+  # See the k8s-bigip-ctlr documentation for information about
+  # all config options
+  # https://clouddocs.f5.com/containers/latest/
+  "--bigip-username=$(BIGIP_USERNAME)",
+  "--bigip-password=$(BIGIP_PASSWORD)",
+  "--bigip-url=10.192.125.60",
+  "--bigip-partition=OpenShift",
+  "--namespace=default",
+  "--pool-member-type=cluster",
+  "--openshift-sdn-name=/Common/openshift_vxlan",
+  "--insecure=true",
+  "--manage-routes=true",
+  "--route-spec-configmap="default/global-cm"
+  "--controller-mode="openshift"
+  "--as3-validation=true",
+  "--log-as3-response=true",
+]
+```

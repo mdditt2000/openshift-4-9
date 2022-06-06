@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Route
+metadata:
+  labels:
+    name: cafe
+    f5tnr: "true"
+  name: cafe-mocha
+spec:
+  host: cafe.example.com
+  path: "/mocha"
+  port:
+    targetPort: 8080
+  tls:
+    clientSSL: /Common/clientssl
+    reference: bigip
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: mocha-svc
