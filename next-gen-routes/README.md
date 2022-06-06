@@ -1,6 +1,6 @@
 # Next Generation OpenShift Routes 
 
-This document compares the differences between OpenShift Routes and Custom Resource Definitions. Custom Resource allows you to extend Kubernetes capabilities by adding any kind of API object useful for your application. Custom Resource Definition is what you use to define a Custom Resource. This is a powerful way to extend F5 CIS Kubernetes capabilities beyond the default installation and similar to OpenShift Routes.
+This document compares the differences between OpenShift Routes and OpenShift Routes using Next Generation Routes Controller. Next Generation Routes Controller extended F5 Controller Ingress Services to use multiple Virtual IP addresses. Before F5 CIS could only manage one Virtual IP address per CIS instance. 
 
 In this example we are using a cafe application with three endpoints; **tea,coffee and mocha** as shown in the diagram below
 
@@ -12,7 +12,7 @@ Demo on YouTube [video]()
 
 ### Step 1: Deploy CIS
 
-Currently in CIS 2.7 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend
+Currently in CIS 2.8.1 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend
 application. In this example the backend is **/tea,/coffee and /mocha**
 
 Add the following parameters to the CIS deployment
@@ -52,9 +52,9 @@ oc create -f bigip-ctlr-clusterrole.yaml
 oc create -f f5-bigip-ctlr-deployment.yaml
 ```
 
-CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cis)
+CIS [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/next-gen-routes/single-vip/cis)
 
-**Note** Do not forget the CNI [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/route-vs-crd/route/cni)
+**Note** Do not forget the CNI [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/next-gen-routes/single-vip/cni)
 
 ### Step 2: Creating OpenShift Routes
 
@@ -63,5 +63,34 @@ User-case for the OpenShift Routes:
 - Edge Termination
 - Redirect HTTP to HTTPS
 - Health monitor of the backend NGINX application using HOST **cafe.example.com** and **PATH /coffee, /tea and /mocha**
-- Custom HTTP Policy for X-Forwarded-For (XFF) HTTP header field - **Use AS3 override**
 - Backend listening on PORT 8080
+
+Create OpenShift Routes
+
+```
+oc create -f cafe-override.yaml
+oc create -f route-tea.yaml
+oc create -f route-coffee.yaml
+oc create -f route-mocha.yaml
+```
+Routes [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/next-gen-routes/single-vip/ocp-route)
+
+Validate OpenShift Routes using the OpenShift Dashboard
+
+![route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_16-53-47.png)
+
+Validate OpenShift Routes using the BIG-IP
+
+![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-36-07.png)
+
+Validate OpenShift Routes pool-members using the BIG-IP
+
+![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-38-40.png)
+
+Validate OpenShift Routes by connecting to the Public IP
+
+![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/route-vs-crd/diagram/2022-01-27_11-44-57.png)
+
+## Next Generation OpenShift Routes
+
+### Step 1: Deploy CIS
