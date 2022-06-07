@@ -12,12 +12,6 @@ data:
       vserverAddr: 10.192.125.65
       vserverName: cafe
       allowOverride: true
-      healthMonitors:
-      - path: "cafe.example.com"
-        send: "HTTP GET /status"
-        recv: "ok"
-        interval: 31
-        timeout: 10
     - namespace: cafenew
       vserverAddr: 10.192.125.66
       vserverName: cafenew
