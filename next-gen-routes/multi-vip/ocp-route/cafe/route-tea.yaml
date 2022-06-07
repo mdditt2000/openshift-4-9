@@ -4,7 +4,7 @@ metadata:
   labels:
     f5tnr: "true"
   name: cafe-tea
-  namespace: default
+  namespace: cafe
 spec:
   host: cafe.example.com
   path: "/tea"

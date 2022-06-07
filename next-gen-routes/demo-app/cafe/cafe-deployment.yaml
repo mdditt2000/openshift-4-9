@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tea
-  namespace: default
+  namespace: cafe
 spec:
   replicas: 3
   selector:
@@ -23,7 +23,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: coffee
-  namespace: default
+  namespace: cafe
 spec:
   replicas: 3
   selector:
@@ -44,7 +44,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mocha
-  namespace: default
+  namespace: cafe
 spec:
   replicas: 3
   selector:
