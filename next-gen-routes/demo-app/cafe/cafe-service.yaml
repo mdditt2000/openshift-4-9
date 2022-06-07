@@ -48,3 +48,20 @@ spec:
   type: ClusterIP
   selector:
     app: mocha
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: status-svc
+  namespace: cafe
+  labels:
+    app: status-svc
+spec:
+  ports:
+  - name: status-svc
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  type: ClusterIP
+  selector:
+    app: status

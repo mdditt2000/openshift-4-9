@@ -60,3 +60,24 @@ spec:
         image: pleshakov/nginx-hello:0.1
         ports:
         - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: status
+  namespace: cafenew
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: status
+  template:
+    metadata:
+      labels:
+        app: status
+    spec:
+      containers:
+      - name: status
+        image: pleshakov/nginx-hello:0.1
+        ports:
+        - containerPort: 80

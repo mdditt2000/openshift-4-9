@@ -14,17 +14,7 @@ data:
       allowOverride: true
       healthMonitors:
       - path: "cafe.example.com"
-        send: "HTTP GET /coffee"
-        recv: "ok"
-        interval: 31
-        timeout: 10
-      - path: "cafe.example.com"
-        send: "HTTP GET /tea"
-        recv: "ok"
-        interval: 31
-        timeout: 10
-      - path: "cafe.example.com"
-        send: "HTTP GET /mocha"
+        send: "HTTP GET /status"
         recv: "ok"
         interval: 31
         timeout: 10
