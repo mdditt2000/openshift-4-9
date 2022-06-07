@@ -10,11 +10,6 @@ spec:
   path: "/tea"
   port:
     targetPort: 8080
-  tls:
-    clientSSL: /Common/clientssl
-    reference: bigip
-    insecureEdgeTerminationPolicy: Redirect
-    termination: edge
   to:
     kind: Service
     name: tea-svc
