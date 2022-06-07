@@ -14,7 +14,7 @@
           {
             "path": "cafe.example.com/",
             "send": "HTTP GET /coffee",
-            "interval": 5,
+            "interval": 31,
             "timeout": 10
           }
         ]
