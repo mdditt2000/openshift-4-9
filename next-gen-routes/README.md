@@ -1,6 +1,6 @@
 # Next Generation OpenShift Routes 
 
-This document demonstrates a new feature for OpenShift Routes using CIS 2.9 Next Generation Routes Controller. Next Generation Routes Controller **extended F5 Controller Ingress Services to use multiple Virtual IP addresses**. Before F5 CIS could only manage one Virtual IP address per CIS instance. 
+This document demonstrates a new feature for OpenShift Routes using F5 Controller Ingress Services (CIS) called **Next Generation Routes Controller***. Next Generation Routes Controller **extended F5 Controller Ingress Services to use multiple Virtual IP addresses**. Before F5 CIS could only manage one Virtual IP address per CIS instance. 
 
 In this example we are using a **cafe** and **cafenew** application with three endpoints; **tea,coffee and mocha** and **multiple namespace** as shown in the diagram below. 
 
@@ -12,7 +12,7 @@ Demo on YouTube [video]()
 
 ### Step 1: Deploy CIS
 
-Currently in CIS 2.8.1 only one Public IP **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend application. This example will use next generation OpenShift routes in CIS 2.9. In this example the backend is **/tea,/coffee and /mocha** using hostname **cafe.example.com**
+Currently in CIS 2.8.1 only one **Public IP**, **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend application. This example will use next generation OpenShift routes in CIS 2.9. In this example the backend is **/tea,/coffee and /mocha** using hostname **cafe.example.com**
 
 Next Generation Routes Controller uses extended ConfigMap, allowing the user to create multiple Virtual IP addresses for OpenShift Routes. Support for multi-partition is also available. Each namespace will be managed in a dedicated partition/tenant on BIG-IP
 
