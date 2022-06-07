@@ -44,7 +44,7 @@ spec:
               "--bigip-url=10.192.125.60",
               "--bigip-partition=OpenShift",
               "--namespace=cafe",
-              "--namespace=cafeTwo",
+              "--namespace=cafenew",
               "--pool-member-type=cluster",
               "--openshift-sdn-name=/Common/openshift_vxlan",
               "--log-level=DEBUG",

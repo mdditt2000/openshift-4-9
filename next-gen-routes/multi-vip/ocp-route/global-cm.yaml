@@ -12,7 +12,7 @@ data:
       vserverAddr: 10.192.125.65
       vserverName: cafe
       allowOverride: true
-    - namespace: cafeTwo
+    - namespace: cafenew
       vserverAddr: 10.192.125.66
-      vserverName: cafeTwo
+      vserverName: cafenew
       allowOverride: true
