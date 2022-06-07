@@ -121,7 +121,7 @@ Validate OpenShift Routes policies by connecting to the Public IP
 
 ![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-07_15-38-33.png)
 
-### Step 3: Creating OpenShift Routes for cafenew.example.com
+### Step 3: Creating OpenShift Routes for New Domain cafenew.example.com
 
 Creating a second Public IP **Virtual Server** for BIG-IP to handle a difference group of applications, namespace or project. Routes uses HOST Header Load balancing to determine the backend application. In this example the backend is **/tea,/coffee and /mocha** using hostname **"cafenew.example.com"**
 
