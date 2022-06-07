@@ -12,7 +12,7 @@ Demo on YouTube [video]()
 
 ### Step 1: Deploy CIS
 
-Currently in CIS 2.8.1 only one **Public IP**, **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend application. This example will use next generation OpenShift routes in CIS 2.9. In this example the backend is **/tea,/coffee and /mocha** using hostname **cafe.example.com**
+Currently in CIS 2.8.1 only one **Public IP**, **Virtual Server** for BIG-IP can be configured for all Routes. Routes uses HOST Header Load balancing to determine the backend application. In this first example the backend is **/tea,/coffee and /mocha** using hostname **cafe.example.com** with Virtual IP address of 10.192.125.65
 
 Next Generation Routes Controller uses extended ConfigMap, allowing the user to create multiple Virtual IP addresses for OpenShift Routes. Support for multi-partition is also available. Each namespace will be managed in a dedicated partition/tenant on BIG-IP
 
