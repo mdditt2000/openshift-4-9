@@ -177,12 +177,16 @@ Routes [repo](https://github.com/mdditt2000/openshift-4-9/tree/main/next-gen-rou
 
 Validate OpenShift Routes using the BIG-IP
 
-![big-ip route]()
+![big-ip route](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-08_09-59-39.png)
 
-Validate OpenShift Routes pool-members using the BIG-IP
+Validate OpenShift Virtual IP using the BIG-IP
 
-![big-ip pools]()
+![big-ip pools](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-08_10-01-21.png)
 
-Validate OpenShift Routes by connecting to the Public IP
+Validate OpenShift Routes policies on the BIG-IP
 
-![traffic]()
+![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-08_10-02-44.png)
+
+Validate OpenShift Routes policies by connecting to the Public IP
+
+![traffic](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-08_10-03-40.png)
