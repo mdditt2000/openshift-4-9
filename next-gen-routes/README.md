@@ -4,7 +4,7 @@ This document demonstrates a new feature for OpenShift Routes using F5 Controlle
 
 In this example we are using a **cafe** and **cafenew** application with three endpoints; **tea,coffee and mocha** and **multiple namespace** as shown in the diagram below. 
 
-![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-06_15-57-24.png)
+![architecture](https://github.com/mdditt2000/openshift-4-9/blob/main/next-gen-routes/diagram/2022-06-08_11-09-57.png)
 
 Demo on YouTube [video]()
 
